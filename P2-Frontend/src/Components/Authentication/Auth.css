@@ -1,0 +1,41 @@
+.loginRec{
+    position:relative;
+    width:300px;
+    min-height:100px;
+    margin:auto;
+    padding-top:30px;  
+    top: 200px
+}
+
+.loginRec:before {
+    content:'';
+    position:absolute;
+    width:240px;
+    height:300px;
+    margin:auto;
+    z-index: -1;
+    border: 5px solid lightgray;
+    top:-10px;
+    left:30px;
+}
+
+.regRec{
+    position:relative;
+    width:300px;
+    min-height:100px;
+    margin:auto;
+    padding-top:15px; 
+    top:200px
+}
+
+.regRec:before {
+    content:'';
+    position:absolute;
+    width:280px;
+    height:310px;
+    margin:auto;
+    z-index: -1;
+    border: 5px solid lightgray;
+    top:-10px;
+    left:10px;
+}

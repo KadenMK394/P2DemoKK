@@ -1,0 +1,16 @@
+.text{
+    display:flex;
+    width:80%;
+}
+
+.dropdown{
+    bottom: 5px;
+}
+
+.first-btn{
+    margin-right:auto;
+}
+
+.second-btn{
+    margin-right:auto;
+}
