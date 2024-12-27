@@ -1,10 +1,10 @@
-package com.revature.Project1;
+package com.revature.Project2Demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Project1ApplicationTests {
+class Project2DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

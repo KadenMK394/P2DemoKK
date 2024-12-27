@@ -1,4 +1,4 @@
-package com.revature.Project1;
+package com.revature.Project2Demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.revature.models")
 @ComponentScan("com.revature")
 @EnableJpaRepositories("com.revature.DAOs")
-public class Project1Application {
+public class Project2DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Project1Application.class, args);
+		SpringApplication.run(Project2DemoApplication.class, args);
 
 		System.out.println("We are running!");
 	}
