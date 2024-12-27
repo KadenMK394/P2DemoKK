@@ -2,7 +2,6 @@ package com.revature.controllers;
 
 import com.revature.annotations.AdminOnly;
 import com.revature.models.DTOs.OutgoingUserDTO;
-import com.revature.models.Reimbursement;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
