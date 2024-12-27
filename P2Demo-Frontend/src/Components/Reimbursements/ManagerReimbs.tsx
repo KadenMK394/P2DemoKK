@@ -22,17 +22,17 @@ export const ManagerReimbs:React.FC = () => {
     const navigate = useNavigate()
 
     const getAllReimbs = async () => {
-        const response = await axios.get("http://localhost:5555/reimbursements", {withCredentials:true})
+        const response = await axios.get("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements", {withCredentials:true})
         setReimbs(response.data)
     }
 
     const getAllPendings = async () => {
-        const response = await axios.get("http://localhost:5555/reimbursements/pending", {withCredentials:true})
+        const response = await axios.get("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/pending", {withCredentials:true})
         setReimbs(response.data)
     }
 
     const approve = async (reimbId:number) => {
-        await axios.patch("http://localhost:5555/reimbursements/" + reimbId, "Approved", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.patch("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + reimbId, "Approved", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             if(display === "All"){
                 getAllReimbs()
@@ -47,7 +47,7 @@ export const ManagerReimbs:React.FC = () => {
     }
 
     const deny = async (reimbId:number) => {
-        await axios.patch("http://localhost:5555/reimbursements/" + reimbId, "Denied", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.patch("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + reimbId, "Denied", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             if(display === "All"){
                 getAllReimbs()

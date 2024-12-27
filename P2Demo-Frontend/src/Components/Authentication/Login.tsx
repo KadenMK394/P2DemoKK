@@ -21,7 +21,7 @@ export const Login:React.FC = () => {
     }
 
     const login = async () => {
-        await axios.post("http://localhost:5555/auth", loginCreds, {withCredentials:true})
+        await axios.post("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/auth", loginCreds, {withCredentials:true})
         .then(
             (response) => {
                 store.loggedInUser = response.data

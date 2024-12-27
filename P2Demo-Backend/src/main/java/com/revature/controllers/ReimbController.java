@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/reimbursements")
-@CrossOrigin(value = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(value = "http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5173", allowCredentials = "true")
 public class ReimbController {
     private final ReimbService reimbService;
 

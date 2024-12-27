@@ -26,7 +26,7 @@ export const NewReimbs:React.FC = () => {
     }
 
     const createReimbursement = async () => {
-        await axios.post("http://localhost:5555/reimbursements/" + store.loggedInUser.userId, newReimb, {withCredentials:true})
+        await axios.post("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + store.loggedInUser.userId, newReimb, {withCredentials:true})
         .then(
             () => {
                 navigate(-1)

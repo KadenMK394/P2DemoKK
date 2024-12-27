@@ -22,7 +22,7 @@ export const Users:React.FC = () => {
     const navigate = useNavigate()
 
     const getAllUsers = async () => {
-        await axios.get("http://localhost:5555/users", {withCredentials:true})
+        await axios.get("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/users", {withCredentials:true})
         .then((response) =>{
             setUsers(response.data)
             setUserState(0)
@@ -34,7 +34,7 @@ export const Users:React.FC = () => {
     }
 
     const deleteUser = async () => {
-        await axios.delete("http://localhost:5555/users/" + userState, {withCredentials:true})
+        await axios.delete("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/users/" + userState, {withCredentials:true})
         .then(() => {
             setUserState(0)
             getAllUsers()
@@ -50,7 +50,7 @@ export const Users:React.FC = () => {
     }
 
     const promoteUser = async (userId:number) => {
-        await axios.patch("http://localhost:5555/users/" + userId, "Manager", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.patch("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/users/" + userId, "Manager", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             getAllUsers()
         })
@@ -61,7 +61,7 @@ export const Users:React.FC = () => {
     }
 
     const demoteUser = async (userId:number) => {
-        await axios.patch("http://localhost:5555/users/" + userId, "Employee", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.patch("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/users/" + userId, "Employee", {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             getAllUsers()
         })

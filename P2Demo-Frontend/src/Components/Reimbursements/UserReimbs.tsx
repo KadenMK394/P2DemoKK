@@ -27,7 +27,7 @@ export const UserReimbs:React.FC = () => {
     const searchParams = useParams()
     
     const getUserReimbs = async (userId:number) => {
-        await axios.get("http://localhost:5555/reimbursements/" + userId, {withCredentials:true})
+        await axios.get("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + userId, {withCredentials:true})
         .then((response) => {
             setReimbs(response.data)
         })
@@ -38,7 +38,7 @@ export const UserReimbs:React.FC = () => {
     }
 
     const getUserPendings = async (userId:number) => {
-        await axios.get("http://localhost:5555/reimbursements/" + userId + "/pending", {withCredentials:true})
+        await axios.get("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + userId + "/pending", {withCredentials:true})
         .then((response) => {
             setReimbs(response.data)
         })
@@ -66,7 +66,7 @@ export const UserReimbs:React.FC = () => {
     }
 
     const saveModify = async () => {
-        await axios.patch("http://localhost:5555/reimbursements/" + Number(searchParams.userId) + "/" + descState, description, {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.patch("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + Number(searchParams.userId) + "/" + descState, description, {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             setDescState(0)
             if(display === "All"){
@@ -91,7 +91,7 @@ export const UserReimbs:React.FC = () => {
     }
 
     const deleteReimb = async () => {
-        await axios.delete("http://localhost:5555/reimbursements/" + Number(searchParams.userId) + "/" + reimbState, {withCredentials:true, headers:{'Content-Type':'text/plain',},})
+        await axios.delete("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/reimbursements/" + Number(searchParams.userId) + "/" + reimbState, {withCredentials:true, headers:{'Content-Type':'text/plain',},})
         .then(() => {
             setReimbState(0)
             if(display === "All"){

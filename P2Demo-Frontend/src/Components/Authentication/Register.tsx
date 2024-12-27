@@ -23,7 +23,7 @@ export const Register:React.FC = () => {
     }
 
     const register = async () => {
-        await axios.post("http://localhost:5555/auth/register", newUser, {withCredentials:true})
+        await axios.post("http://project2db.cv460kkke6xu.us-east-2.rds.amazonaws.com:5555/auth/register", newUser, {withCredentials:true})
         .then((response) => {
             store.loggedInUser = response.data
                 
