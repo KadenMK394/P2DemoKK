@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/P2Demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port that the Spring application listens on
-EXPOSE 4444
+EXPOSE 5555
 
 # Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
